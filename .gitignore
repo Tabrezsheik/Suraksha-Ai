@@ -1,0 +1,77 @@
+# Node.js & Dependencies
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Next.js Build Output
+web/.next/
+web/out/
+.next/
+out/
+build/
+dist/
+
+# Expo / React Native
+mobile/.expo/
+mobile/dist/
+mobile/node_modules/
+
+# Python Cache & Environments
+ai-service/__pycache__/
+ai-service/*.pyc
+ai-service/*.pyo
+ai-service/*.pyd
+ai-service/venv/
+ai-service/.venv/
+**/__pycache__/
+**/*.pyc
+venv/
+.venv/
+
+# Environment Variables & Credentials (Strictly Excluded)
+.env
+.env.*
+*.env
+**/.env
+**/*.env
+server/.env
+Documentation/atlas-credentials.env
+!.env.example
+!**/.env.example
+
+# Runtime Media & Uploads
+uploads/
+server/uploads/
+**/uploads/
+*.webm
+*.mp3
+*.wav
+*.aac
+*.m4a
+
+# Temporary & Scratch Files
+scratch/
+server/scratch/
+web/scratch/
+**/scratch/
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# Backups & Temporary Files
+*.bak
+*.backup
+*.tmp
+.git_backup/
+web/.git_backup/
+
+# OS Files & IDEs
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db

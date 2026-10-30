@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suraksha AI — Logo Reveal</title>
+  <style>
+    :root {
+      --navy: #062442;
+      --deep-blue: #0154bf;
+      --blue: #0072fc;
+      --light-blue: #7fb8e8;
+      --silver: #cfd9e3;
+      --glow: #5aa3e0;
+      --bg: #ffffff;
+      --bright-blue: #0072fc;
+      --mid-blue: #0154bf;
+      --shield-navy: #00215c;
+      --tagline-gray: #5a7086;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      overflow: hidden;
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+    }
+
+    .stage {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+    }
+
+    /* ambient blue wash */
+    .wash {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 48%, rgba(90, 163, 224, 0.18) 0%, rgba(90, 163, 224, 0.06) 35%, rgba(255, 255, 255, 0) 65%);
+      opacity: 0;
+      animation: washIn 1.5s ease-out forwards;
+    }
+
+    @keyframes washIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* floating particles */
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--light-blue);
+      opacity: 0;
+      animation-name: particleFloat;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes particleFloat {
+      0% {
+        opacity: 0;
+        transform: translateY(14px) scale(0.4);
+      }
+
+      15% {
+        opacity: 0.85;
+      }
+
+      70% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(1);
+      }
+    }
+
+    /* logo group */
+    .logo-wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transform-origin: center center;
+      max-width: 90vw;
+    }
+
+    .glow-ring {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      width: 320px;
+      height: 320px;
+      transform: translate(-50%, -50%) scale(0.7);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(90, 163, 224, 0.38) 0%, rgba(90, 163, 224, 0) 68%);
+      opacity: 0;
+      filter: blur(2px);
+      animation: glowPulse 1.8s ease-out 2.1s forwards;
+      pointer-events: none;
+    }
+
+    @keyframes glowPulse {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
+      }
+
+      45% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      100% {
+        opacity: 0.55;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    svg.logo-svg {
+      width: clamp(140px, 26vw, 210px);
+      height: clamp(140px, 26vw, 210px);
+      overflow: visible;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* shield outline drawing on */
+    .shield-outline {
+      fill: none;
+      stroke: var(--navy);
+      stroke-width: 3.5;
+      stroke-linejoin: round;
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+      animation: drawShield 1.1s cubic-bezier(.65, 0, .35, 1) 0.3s forwards;
+    }
+
+    @keyframes drawShield {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* shield fill halves */
+    .shield-fill-left,
+    .shield-fill-right {
+      opacity: 0;
+      transform-origin: center center;
+      animation: shieldFill 0.7s ease-out 1.2s forwards;
+    }
+
+    .shield-fill-right {
+      animation-delay: 1.25s;
+    }
+
+    @keyframes shieldFill {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .shield-fill-left {
+      fill: var(--bright-blue);
+    }
+
+    .shield-fill-right {
+      fill: var(--shield-navy);
+    }
+
+    .shield-fold {
+      fill: var(--mid-blue);
+      stroke: none;
+      opacity: 0;
+      animation: shieldFill 0.6s ease-out 1.4s forwards;
+    }
+
+    /* Waveform bar styling */
+    .wf-bar {
+      transform-box: fill-box;
+      transform-origin: center;
+      opacity: 0;
+      transform: scaleY(0);
+    }
+
+    @keyframes barGrow {
+      to {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+
+    @keyframes barPulse {
+
+      0%,
+      100% {
+        transform: scaleY(1);
+      }
+
+      50% {
+        transform: scaleY(0.85);
+      }
+    }
+
+    /* shine sweep across shield */
+    .shine {
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 40%;
+      height: 70%;
+      background: linear-gradient(115deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-18deg);
+      opacity: 0;
+      animation: shineSweep 1.0s ease-in-out 2.3s forwards;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    @keyframes shineSweep {
+      0% {
+        left: -60%;
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.9;
+      }
+
+      55% {
+        opacity: 0.9;
+      }
+
+      100% {
+        left: 130%;
+        opacity: 0;
+      }
+    }
+
+    /* wordmark */
+    .wordmark {
+      margin-top: 16px;
+      font-size: clamp(20px, 4.2vw, 28px);
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--navy);
+      opacity: 0;
+      transform: translateY(14px);
+      animation: textUp 0.7s cubic-bezier(.25, .8, .35, 1) 1.8s forwards;
+      z-index: 2;
+      white-space: nowrap;
+    }
+
+    .wordmark span.accent {
+      color: var(--blue);
+    }
+
+    @keyframes textUp {
+      0% {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tagline {
+      margin-top: 6px;
+      font-size: clamp(9px, 1.8vw, 11px);
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--tagline-gray);
+      font-weight: 600;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: textUp 0.7s cubic-bezier(.25, .8, .35, 1) 2.0s forwards;
+    }
+
+    .tagline .dash {
+      display: inline-block;
+      width: clamp(16px, 3vw, 24px);
+      height: 2px;
+      background: var(--blue);
+      margin: 0 8px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stage" id="stage">
+    <div class="wash"></div>
+    <div class="particles" id="particles"></div>
+
+    <div class="logo-wrap">
+      <div class="glow-ring"></div>
+      <div class="shine"></div>
+
+      <svg class="logo-svg" viewBox="0 0 220 220">
+        <defs>
+          <!-- Clip wave inside shield bounds -->
+          <clipPath id="shield-clip">
+            <path d="M110 11 L185 36 L185 100 C185 146 153 182 110 200 C67 182 35 146 35 100 L35 36 Z" />
+          </clipPath>
+        </defs>
+
+        <!-- shield outline -->
+        <path class="shield-outline" d="M110 8 L190 34 L190 100 C190 150 155 190 110 210
+           C65 190 30 150 30 100 L30 34 Z" />
+
+        <!-- shield fill halves -->
+        <path class="shield-fill-left" d="M110 11 L35 36 L35 100 C35 146 67 182 110 200 Z" />
+        <path class="shield-fill-right" d="M110 11 L185 36 L185 100 C185 146 153 182 110 200 Z" />
+
+        <!-- darker mid-blue fold facet -->
+        <path class="shield-fold" d="M110 11 L89 25 L89 100 C89 144 98 170 105 188 L110 200 Z" />
+
+        <!-- Barcode-style pill waveform -->
+        <g clip-path="url(#shield-clip)">
+          <g id="waveInner"></g>
+        </g>
+        <g id="waveOuter"></g>
+      </svg>
+
+      <div class="wordmark">SURAKSHA<span class="accent"> AI</span></div>
+      <div class="tagline"><span class="dash"></span>Intelligent Protection<span class="dash"></span></div>
+    </div>
+  </div>
+
+  <script>
+    function buildWaveform() {
+      const innerGroup = document.getElementById('waveInner');
+      const outerGroup = document.getElementById('waveOuter');
+      if (!innerGroup || !outerGroup) return;
+      innerGroup.innerHTML = '';
+      outerGroup.innerHTML = '';
+
+      const SHIELD_LEFT = 35;
+      const SHIELD_RIGHT = 185;
+
+      const centerY = 107;
+      const maxHalf = 66;
+      const xStart = -8;
+      const xEnd = 228;
+      const barCount = 16;
+      const spacing = (xEnd - xStart) / (barCount - 1);
+      const barWidth = 4.6;
+
+      const peaks = [
+        { pos: 0.10, amp: 0.09, width: 0.065 },
+        { pos: 0.20, amp: 0.22, width: 0.06 },
+        { pos: 0.29, amp: 0.32, width: 0.065 },
+        { pos: 0.38, amp: 0.23, width: 0.055 },
+        { pos: 0.455, amp: 0.47, width: 0.06 },
+        { pos: 0.545, amp: 0.47, width: 0.06 },
+        { pos: 0.62, amp: 0.23, width: 0.055 },
+        { pos: 0.71, amp: 0.32, width: 0.065 },
+        { pos: 0.80, amp: 0.22, width: 0.06 },
+        { pos: 0.90, amp: 0.09, width: 0.065 }
+      ];
+
+      function envelope(t) {
+        let v = 0;
+        for (const p of peaks) {
+          const d = (t - p.pos) / p.width;
+          v += p.amp * Math.exp(-d * d);
+        }
+        const centerDip = 1 - 0.4 * Math.exp(-(((t - 0.5) / 0.018) ** 2));
+        return v * centerDip;
+      }
+
+      function colorForEnv(v, x) {
+        v = Math.max(0, Math.min(1, v));
+        if (v > 0.45) return '#ffffff';
+        return x < 110 ? 'var(--navy)' : 'var(--light-blue)';
+      }
+
+      const maxEnv = 1.05;
+      const lastIndex = barCount - 1;
+      const envByMirrorI = new Map();
+
+      for (let i = 0; i < barCount; i++) {
+        const t = i / lastIndex;
+        const x = xStart + i * spacing;
+        const mirrorI = Math.min(i, lastIndex - i);
+
+        let env;
+        if (envByMirrorI.has(mirrorI)) {
+          env = envByMirrorI.get(mirrorI);
+        } else {
+          const mt = mirrorI / lastIndex;
+          env = envelope(mt) / maxEnv;
+          env = Math.max(0, Math.min(1, env * (0.82 + 0.18 * ((Math.sin(mirrorI * 7.13) + 1) / 2))));
+          const edgeFade = Math.min(1, mt * 11);
+          env *= Math.max(0.035, edgeFade);
+          envByMirrorI.set(mirrorI, env);
+        }
+
+        let h = env * maxHalf;
+        if (h < 2.2) h = 2.2;
+
+        const fill = colorForEnv(env, x);
+
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('class', 'wf-bar');
+        rect.setAttribute('x', (x - barWidth / 2).toFixed(2));
+        rect.setAttribute('y', (centerY - h).toFixed(2));
+        rect.setAttribute('width', barWidth);
+        rect.setAttribute('height', (h * 2).toFixed(2));
+        rect.setAttribute('rx', (barWidth / 2).toFixed(2));
+        rect.setAttribute('fill', fill);
+        rect.style.filter = `drop-shadow(0 0 1.4px rgba(90,163,224,${(0.15 + env * 0.35).toFixed(2)}))`;
+
+        const growDelay = (0.7 + i * 0.009).toFixed(3);
+        const pulseDelay = (1.1 + i * 0.009).toFixed(3);
+        const pulseDur = (1.5 + ((i * 37) % 9) * 0.08).toFixed(2);
+        rect.style.animation =
+          `barGrow 0.35s cubic-bezier(.25,.8,.35,1) ${growDelay}s forwards, ` +
+          `barPulse ${pulseDur}s ease-in-out ${pulseDelay}s infinite`;
+
+        const targetGroup = (x >= SHIELD_LEFT && x <= SHIELD_RIGHT) ? innerGroup : outerGroup;
+        targetGroup.appendChild(rect);
+      }
+    }
+
+    function spawnParticles() {
+      const wrap = document.getElementById('particles');
+      wrap.innerHTML = '';
+      const count = 22;
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const x = 50 + (Math.random() * 36 - 18);
+        const y = 40 + (Math.random() * 34 - 17);
+        p.style.left = x + '%';
+        p.style.top = y + '%';
+        const delay = (Math.random() * 1.0).toFixed(2);
+        const duration = (1.4 + Math.random() * 1.0).toFixed(2);
+        p.style.animationDelay = delay + 's';
+        p.style.animationDuration = duration + 's';
+        wrap.appendChild(p);
+      }
+    }
+
+    spawnParticles();
+    buildWaveform();
+
+    // Notify parent window when the full animation sequence completes
+    setTimeout(() => {
+      try {
+        window.parent.postMessage({ type: 'SURAKSHA_SPLASH_COMPLETE' }, '*');
+      } catch (e) { }
+    }, 3500);
+  </script>
+
+</body>
+
+</html>
