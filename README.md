@@ -1,17 +1,17 @@
 # Suraksha AI
 
 <div align="center">
-  <img src="assets/suraksha-banner.svg" alt="Suraksha AI banner" width="900" />
+  <img src="web/suraksha-ai.jpeg" alt="Suraksha AI banner" width="900" />
 </div>
 
 <h1 align="center" style="font-size: 72px; font-weight: 800; letter-spacing: 0.08em; color: #0d3a68; margin-top: 16px; margin-bottom: 8px;">SURAKSHA AI</h1>
 <p align="center" style="font-size: 28px; font-weight: 500; letter-spacing: 0.18em; color: #0d7ab8; margin-top: 0; margin-bottom: 24px;">INTELLIGENT PROTECTION</p>
 
-Suraksha AI is a proactive safety platform built around a Prevent → Detect → Respond model. It combines a mobile safety companion, a web monitoring dashboard, an Express backend coordinator, and an AI-powered intelligence layer to help users, guardians, and response teams act quickly during emergencies.
+Suraksha AI is a proactive safety platform built around a Prevent → Detect → Respond model. It combines a mobile safety companion, a web monitoring dashboard, an Express backend coordinator, and an AI-powered intelligence layer to help people stay safe before, during, and after critical situations.
 
 ## Why Suraksha AI?
 
-Suraksha AI empowers individuals to stay safer through continuous risk awareness, emergency alerts, live tracking, and AI-assisted guidance when it matters most. The platform is designed for real-world protection workflows across personal safety, trusted circles, and emergency response coordination.
+Suraksha AI empowers individuals to stay safer through continuous risk awareness, emergency alerts, live tracking, and AI-assisted guidance when it matters most. The platform is designed for real-world safety scenarios where quick response and trusted communication can make a difference.
 
 ## Core Capabilities
 
