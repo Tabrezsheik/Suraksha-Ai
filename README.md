@@ -7,7 +7,7 @@
 <h1 align="center" style="font-size: 72px; font-weight: 800; letter-spacing: 0.08em; color: #0d3a68; margin-top: 16px; margin-bottom: 8px;">SURAKSHA AI</h1>
 <p align="center" style="font-size: 28px; font-weight: 500; letter-spacing: 0.18em; color: #0d7ab8; margin-top: 0; margin-bottom: 24px;">INTELLIGENT PROTECTION</p>
 
-Suraksha AI is a proactive safety platform designed for real-world risk prevention and emergency response. Built around a Prevent → Detect → Respond model, it combines a mobile safety companion, a web monitoring dashboard, an Express backend coordinator, and an AI-powered intelligence layer to help users stay safer in critical situations.
+Suraksha AI is a proactive safety platform designed for real-world risk prevention and emergency response. Built around a Prevent → Detect → Respond model, it combines a mobile safety companion, live monitoring features, and intelligent emergency support to help people act earlier and stay safer in daily life and while traveling.
 
 From everyday travel risk awareness to emergency escalation workflows, Suraksha AI enables users to act faster, stay informed, and share critical safety information with trusted contacts when it matters most.
 
@@ -31,7 +31,7 @@ Suraksha AI empowers individuals, families, and guardians by providing:
 
 ## Core Capabilities
 
-- AI-assisted risk analysis for unsafe situations and travel patterns
+- AI-assisted safety intelligence for unsafe situations and travel patterns
 - Real-time location sharing and live GPS monitoring
 - Silent SOS and emergency alert workflows
 - Trusted-circle notifications and guardian access
@@ -85,7 +85,7 @@ Suraksha-AI/
 ### AI & Intelligence
 - Python
 - FastAPI
-- AI / ML-based risk analysis and route intelligence
+- AI / ML-based route intelligence and adaptive safety recommendations
 
 ### Data & Persistence
 - MongoDB
