@@ -7,7 +7,7 @@
 <h1 align="center" style="font-size: 72px; font-weight: 800; letter-spacing: 0.08em; color: #0d3a68; margin-top: 16px; margin-bottom: 8px;">SURAKSHA AI</h1>
 <p align="center" style="font-size: 28px; font-weight: 500; letter-spacing: 0.18em; color: #0d7ab8; margin-top: 0; margin-bottom: 24px;">INTELLIGENT PROTECTION</p>
 
-Suraksha AI is a proactive safety platform designed for real-world risk prevention and emergency response. Built around a Prevent → Detect → Respond model, it combines a mobile safety companion, live monitoring features, and intelligent emergency support to help people act earlier and stay safer in daily life and while traveling.
+Suraksha AI is a proactive safety platform designed for real-world risk prevention and emergency response. Built around a Prevent → Detect → Respond model, it combines a mobile safety companion experience, real-time situation awareness, trusted-circle communication, and AI-driven rescue guidance to help users act earlier and more confidently in unsafe conditions.
 
 From everyday travel risk awareness to emergency escalation workflows, Suraksha AI enables users to act faster, stay informed, and share critical safety information with trusted contacts when it matters most.
 
@@ -72,29 +72,33 @@ Suraksha-AI/
 
 ## Technology Stack
 
-### Frontend
-- Next.js
-- React
-- Expo / React Native
+### 🛠️ Tech Stack
 
-### Backend
-- Node.js
-- Express.js
-- Socket.IO
+#### Frontend
+[![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/) 
+[![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)](https://react.dev/) 
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-### AI & Intelligence
-- Python
-- FastAPI
-- AI / ML-based route intelligence and adaptive safety recommendations
+#### Backend
+[![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/) 
+[![Express.js](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)](https://expressjs.com/) 
+[![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?logo=socketdotio&logoColor=white)](https://socket.io/)
 
-### Data & Persistence
-- MongoDB
-- Structured safety records and event data
+#### AI & Safety Intelligence
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/) 
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) 
+[![OpenRouter](https://img.shields.io/badge/OpenRouter-FF6B35)](https://openrouter.ai/)
 
-### Security
-- JWT Authentication
-- Secure communication and authorization flow
-- Guardian and trusted-circle access control
+#### Data & Mapping
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/) 
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/) 
+[![PostGIS](https://img.shields.io/badge/PostGIS-4F5B8B?logo=postgresql&logoColor=white)](https://postgis.net/) 
+[![Leaflet](https://img.shields.io/badge/Leaflet-199900?logo=leaflet&logoColor=white)](https://leafletjs.com/) 
+[![Mapbox](https://img.shields.io/badge/Mapbox-000000?logo=mapbox&logoColor=white)](https://www.mapbox.com/) 
+[![OpenRouteService](https://img.shields.io/badge/OpenRouteService-3A7BD5)](https://openrouteservice.org/)
+
+#### Security & Auth
+[![JWT](https://img.shields.io/badge/JWT-000000)](https://jwt.io/)
 
 ---
 
