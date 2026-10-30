@@ -1,53 +1,104 @@
-# Suraksha AI — Master Repository
+# Suraksha AI
 
-Suraksha AI is a proactive safety platform built on a **Prevent → Detect → Respond** model. It includes a mobile safety client, a web monitoring dashboard, an Express backend coordinator, and a Python FastAPI risk analysis engine.
+<div align="center">
+  <img src="assets/suraksha-banner.svg" alt="Suraksha AI banner" width="900" />
+</div>
 
-## Project Structure
+<h1 align="center" style="font-size: 72px; font-weight: 800; letter-spacing: 0.08em; color: #0d3a68; margin-top: 16px; margin-bottom: 8px;">SURAKSHA AI</h1>
+<p align="center" style="font-size: 28px; font-weight: 500; letter-spacing: 0.18em; color: #0d7ab8; margin-top: 0; margin-bottom: 24px;">INTELLIGENT PROTECTION</p>
 
-- `server/`: Node.js + Express API server and Socket.IO coordinator
-- `web/`: Next.js web application (PC safety dashboard)
-- `mobile/`: React Native Expo mobile application
-- `ai-service/`: Python + FastAPI intelligence service
-- `Documentation/`: API specifications, schemas, design rules, and project roadmap
+Suraksha AI is a proactive safety platform built around a Prevent → Detect → Respond model. It combines a mobile safety companion, a web monitoring dashboard, an Express backend coordinator, and an AI-powered intelligence layer to help users, guardians, and response teams act quickly during emergencies.
+
+## Why Suraksha AI?
+
+Suraksha AI empowers individuals to stay safer through continuous risk awareness, emergency alerts, live tracking, and AI-assisted guidance when it matters most. The platform is designed for real-world protection workflows across personal safety, trusted circles, and emergency response coordination.
+
+## Core Capabilities
+
+- AI-assisted risk analysis for unsafe situations and travel patterns
+- Real-time location sharing and live GPS monitoring
+- Silent SOS and emergency alert workflows
+- Trusted-circle notifications and guardian access
+- AI safe-route recommendations and protective journey tracking
+- Voice-powered emergency support and guidance
+- Evidence collection and notification pipelines for response workflows
+
+## Repository Structure
+
+- `server/`: Node.js + Express backend, APIs, authentication, and coordinator logic
+- `web/`: Next.js dashboard for monitoring and admin workflows
+- `mobile/`: React Native Expo application for end-user safety features
+- `ai-service/`: Python + FastAPI intelligence service for risk detection and recommendations
+- `Documentation/`: technical design, API docs, schemas, and project roadmap
+
+## Tech Stack
+
+- Frontend: Next.js, React, Expo
+- Backend: Node.js, Express.js, Socket.IO
+- AI & Intelligence: Python, FastAPI, ML/AI workflows
+- Data & Storage: MongoDB, structured safety records and event data
+- Security: JWT authentication, secure coordination, and route/system protection
 
 ## Getting Started
 
-### 1. Prerequisites
+### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18+ recommended)
-- [Python](https://www.python.org/) (v3.10+ recommended)
-- [Expo CLI](https://docs.expo.dev/) (for mobile application development)
+- Node.js v18+
+- Python 3.10+
+- Expo CLI
+- MongoDB instance or Atlas connection
 
-### 2. Environment Setup
-
-Copy `.env.example` to `.env` in the server directory and configure your local settings:
+### Backend Setup
 
 ```bash
 cd server
+npm install
 cp .env.example .env
+npm run dev
 ```
 
-Define the local variables:
+### Web Dashboard
 
-- `PORT`: Server port (default: 5000)
-- `MONGODB_URI`: Connection string to your MongoDB database (Atlas or local)
-- `JWT_SECRET`: Secret token for JWT signatures
+```bash
+cd web
+npm install
+npm run dev
+```
 
-### 3. Installation & Run
+### Mobile App
 
-Refer to each directory's instructions for development setup and startup commands.
-- **Server**: `npm install` && `npm run dev`
-- **Web**: `npm install` && `npm run dev`
-- **Mobile**: `npm install` && `npx expo start`
-- **AI Service**: Install virtual environment, `pip install -r requirements.txt`, and run `uvicorn app.main:app --reload`
+```bash
+cd mobile
+npm install
+npx expo start
+```
 
-## Project Status Summary
-- **Phase 1 — Foundation & Health Check:** COMPLETE + VERIFIED ✅
-- **Phase 2 — Authentication & Security:** COMPLETE + VERIFIED ✅
-- **Phase 3 — User & Trusted Circle Core:** COMPLETE + VERIFIED ✅
-- **Phase 4 — Silent SOS & Emergency Core:** COMPLETE + VERIFIED ✅
-- **Phase 5 — Live GPS & Real-Time Tracking:** COMPLETE + VERIFIED ✅
-- **Phase 6 — AI Risk Detection Engine:** COMPLETE + VERIFIED ✅
-- **Phase 7 — Guardian Mode & Journey Mini-Map:** COMPLETE + VERIFIED ✅
-- **Phase 8 — AI Safe Route:** COMPLETE + REAL-DATA VALIDATED ✅
-- **Phase 9 — AI Safety Assistant, Voice SOS, Legal RAG, Emergency Evidence & Notifications:** COMPLETE + VERIFIED ✅
+### AI Service
+
+```bash
+cd ai-service
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+## Project Status
+
+- Phase 1 — Foundation & Health Check: Complete
+- Phase 2 — Authentication & Security: Complete
+- Phase 3 — Trusted Circle & User Safety Core: Complete
+- Phase 4 — Silent SOS & Emergency Core: Complete
+- Phase 5 — Live GPS & Real-Time Tracking: Complete
+- Phase 6 — AI Risk Detection Engine: Complete
+- Phase 7 — Guardian Mode & Journey Monitoring: Complete
+- Phase 8 — AI Safe Route: Complete
+- Phase 9 — AI Safety Assistant, Voice SOS, Legal RAG, Evidence & Notifications: Complete
+
+## Documentation
+
+Detailed project documentation is available in the `Documentation/` directory, covering requirements, system design, API contracts, database design, testing, and deployment guidance.
+
+## License
+
+This project is licensed under the MIT License.
