@@ -1,17 +1,33 @@
 # Suraksha AI
 
 <div align="center">
-  <img src="web/suraksha-ai.jpeg" alt="Suraksha AI banner" width="900" />
+  <img src="web/suraksha-ai.jpeg" alt="Suraksha AI Banner" width="900" />
 </div>
 
 <h1 align="center" style="font-size: 72px; font-weight: 800; letter-spacing: 0.08em; color: #0d3a68; margin-top: 16px; margin-bottom: 8px;">SURAKSHA AI</h1>
 <p align="center" style="font-size: 28px; font-weight: 500; letter-spacing: 0.18em; color: #0d7ab8; margin-top: 0; margin-bottom: 24px;">INTELLIGENT PROTECTION</p>
 
-Suraksha AI is a proactive safety platform built around a Prevent → Detect → Respond model. It combines a mobile safety companion, a web monitoring dashboard, an Express backend coordinator, and an AI-powered intelligence layer to help people stay safe before, during, and after critical situations.
+Suraksha AI is a proactive safety platform designed for real-world risk prevention and emergency response. Built around a Prevent → Detect → Respond model, it combines a mobile safety companion, a web monitoring dashboard, an Express backend coordinator, and an AI-powered intelligence layer to help users stay safer in critical situations.
+
+From everyday travel risk awareness to emergency escalation workflows, Suraksha AI enables users to act faster, stay informed, and share critical safety information with trusted contacts when it matters most.
+
+---
 
 ## Why Suraksha AI?
 
-Suraksha AI empowers individuals to stay safer through continuous risk awareness, emergency alerts, live tracking, and AI-assisted guidance when it matters most. The platform is designed for real-world safety scenarios where quick response and trusted communication can make a difference.
+Personal safety is not just about reacting during emergencies—it is about identifying risks early, preventing harm, and responding intelligently when incidents occur.
+
+Suraksha AI empowers individuals, families, and guardians by providing:
+
+- Continuous risk awareness and intelligent monitoring
+- Live location sharing and emergency coordination
+- Silent SOS alert workflows
+- Trusted-circle notifications for rapid support
+- AI-based recommendations for safe travel and protection
+- Voice-assisted guidance in emergency scenarios
+- Evidence capture and response-oriented communication
+
+---
 
 ## Core Capabilities
 
@@ -23,67 +39,93 @@ Suraksha AI empowers individuals to stay safer through continuous risk awareness
 - Voice-powered emergency support and guidance
 - Evidence collection and notification pipelines for response workflows
 
+---
+
+## System Overview
+
+Suraksha AI is structured as a multi-layer safety ecosystem:
+
+- Mobile App: end-user smartphone experience for safety check-ins, alerts, and emergency actions
+- Web Dashboard: monitoring interface for guardians, admins, and live safety oversight
+- Backend API: central coordination, user management, event processing, and communication
+- AI Service: risk intelligence, safe-route recommendations, and semantic safety assistance
+- Database & Storage: structured data for users, locations, alerts, safety events, and trusted circles
+
+---
+
 ## Repository Structure
 
-- `server/`: Node.js + Express backend, APIs, authentication, and coordinator logic
-- `web/`: Next.js dashboard for monitoring and admin workflows
-- `mobile/`: React Native Expo application for end-user safety features
-- `ai-service/`: Python + FastAPI intelligence service for risk detection and recommendations
-- `Documentation/`: technical design, API docs, schemas, and project roadmap
-
-## Tech Stack
-
-- Frontend: Next.js, React, Expo
-- Backend: Node.js, Express.js, Socket.IO
-- AI & Intelligence: Python, FastAPI, ML/AI workflows
-- Data & Storage: MongoDB, structured safety records and event data
-- Security: JWT authentication, secure coordination, and route/system protection
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js v18+
-- Python 3.10+
-- Expo CLI
-- MongoDB instance or Atlas connection
-
-### Backend Setup
-
 ```bash
-cd server
-npm install
-cp .env.example .env
-npm run dev
+Suraksha-AI/
+├── server/                 # Node.js + Express backend APIs and coordination logic
+├── web/                   # Next.js web dashboard for monitoring and guardianship
+├── mobile/                # React Native Expo mobile app for end-user safety features
+├── ai-service/            # Python + FastAPI AI intelligence service
+├── Documentation/         # Design docs, API docs, requirements, roadmap, and testing notes
+├── README.md              # Project overview and setup guide
+├── LICENSE                # MIT License
+├── .gitignore
+└── package.json
 ```
 
-### Web Dashboard
+---
 
-```bash
-cd web
-npm install
-npm run dev
-```
+## Technology Stack
 
-### Mobile App
+### Frontend
+- Next.js
+- React
+- Expo / React Native
 
-```bash
-cd mobile
-npm install
-npx expo start
-```
+### Backend
+- Node.js
+- Express.js
+- Socket.IO
 
-### AI Service
+### AI & Intelligence
+- Python
+- FastAPI
+- AI / ML-based risk analysis and route intelligence
 
-```bash
-cd ai-service
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
+### Data & Persistence
+- MongoDB
+- Structured safety records and event data
+
+### Security
+- JWT Authentication
+- Secure communication and authorization flow
+- Guardian and trusted-circle access control
+
+---
+
+## Features in Detail
+
+### 1. AI Risk Detection
+The system continuously evaluates behavioral, route, and contextual signals to detect potential unsafe scenarios and warn users early.
+
+### 2. Live GPS Monitoring
+Users and guardians can monitor live location updates, improving awareness and enabling rapid response during emergencies.
+
+### 3. Trusted Circle Coordination
+Users can share safety information with trusted contacts and guardians, enabling faster support in real time.
+
+### 4. Silent SOS & Emergency Alerts
+Critical workflows allow users to trigger help without requiring heavy interaction, making the system usable in urgent situations.
+
+### 5. Safe Route Recommendations
+AI-powered suggestions help users avoid risky paths and adopt safer alternatives during travel or movement.
+
+### 6. Voice-Assisted Emergency Guidance
+The system guides users through important emergency steps using voice-based support and structured safety instructions.
+
+### 7. Evidence & Response Workflows
+The platform supports evidence collection and notification pipelines, helping users document and escalate situations effectively.
+
+---
 
 ## Project Status
+
+The repository reflects a phased development pipeline with the following status:
 
 - Phase 1 — Foundation & Health Check: Complete
 - Phase 2 — Authentication & Security: Complete
@@ -95,10 +137,143 @@ uvicorn app.main:app --reload
 - Phase 8 — AI Safe Route: Complete
 - Phase 9 — AI Safety Assistant, Voice SOS, Legal RAG, Evidence & Notifications: Complete
 
+This signals that the project has reached a substantial feature-complete stage, with a focus on intelligent safety operations and emergency readiness.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js v18+
+- Python 3.10+
+- Expo CLI
+- MongoDB instance or Atlas connection
+
+---
+
+### 1. Backend Setup
+
+```bash
+cd server
+npm install
+cp .env.example .env
+npm run dev
+```
+
+---
+
+### 2. Web Dashboard Setup
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Visit:
+
+```bash
+http://localhost:3000
+```
+
+---
+
+### 3. Mobile App Setup
+
+```bash
+cd mobile
+npm install
+npx expo start
+```
+
+---
+
+### 4. AI Service Setup
+
+```bash
+cd ai-service
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+---
+
+## Environment Configuration
+
+Example server configuration:
+
+```env
+PORT=5000
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/suraksha-ai
+JWT_SECRET=your_super_secret_jwt_key
+JWT_EXPIRES_IN=7d
+CLIENT_URL=http://localhost:3000
+```
+
+Optional AI configuration:
+
+```env
+GEMINI_API_KEY=your_api_key
+```
+
+---
+
 ## Documentation
 
-Detailed project documentation is available in the `Documentation/` directory, covering requirements, system design, API contracts, database design, testing, and deployment guidance.
+Detailed project documentation is available in the `Documentation/` directory, covering:
+
+- Requirements and scope
+- System design and architecture
+- API contracts
+- Database design
+- Security and configuration
+- Testing and validation
+- Deployment guidance
+- User manual and roadmap
+
+---
+
+## Security & Data Integrity
+
+Suraksha AI is designed with safety-first principles in mind:
+
+- JWT-based authentication and secure access
+- Authorization safeguards for sensitive routes
+- Trusted-circle protection and restricted visibility
+- Secure coordination of alerts and live updates
+- Data protection through controlled access patterns
+
+---
 
 ## License
 
 This project is licensed under the MIT License.
+
+---
+
+## Team
+
+This project was developed as a collaborative mini-project by:
+
+- P. Tabrez Ahmad (Lead Developer)
+- Y. Srinivas Sameer
+- G. Bhavitha Sree
+- P. Srivalli
+- S. Sravanthi
+
+---
+
+## Project Links
+
+- GitHub Repository: https://github.com/Tabrezsheik/Suraksha-Ai
+- Project Type: Full-stack safety platform
+- Focus Area: AI-powered personal safety, real-time monitoring, emergency response
+
+---
+
+## Acknowledgments
+
+Built with the goal of improving personal safety, emergency awareness, and intelligent protection for users in everyday, travel, and high-risk scenarios.
